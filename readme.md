@@ -436,9 +436,9 @@ This program is distributed in the hope that it will be useful, but **WITHOUT AN
 | 🐛 **Issue tracker** | <https://github.com/JssWebSolutions/recognition/issues> |
 | 📦 **Releases** | <https://github.com/JssWebSolutions/recognition/releases> |
 | 🪪 **License portal** | <https://license.jsswebsolutions.com/> |
-| 🛒 **WooCommerce add-on folder** | `C:\Users\user\Documents\JSS\MiniMax\face\frl-woocommerce-addon` |
-| 📱 **QR Login add-on folder** | `C:\Users\user\Documents\JSS\MiniMax\face\frl-qr-login-addon` |
-| 🪪 **License folder (local)** | `C:\Users\user\Documents\JSS\MiniMax\face\license` |
+| 🛒 **WooCommerce add-on** | <https://www.jsswebsolutions.com/frl-woocommerce-addon/> |
+| 📱 **QR Login add-on** | <https://www.jsswebsolutions.com/frl-qr-login-addon/> |
+| 🪪 **License Website** | <https://license.jsswebsolutions.com/> |
 | 🏢 **Author website** | <https://www.jsswebsolutions.com> |
 | 📧 **Support email** | [support@jsswebsolutions.com](mailto:support@jsswebsolutions.com) |
 | 💖 **Donate** | <https://www.jsswebsolutions.com/donate> |
