@@ -1,0 +1,238 @@
+/*!
+ * Face Recognition Login – Profile Enrollment Styles
+ *
+ * Styles for the face-enrollment UI shown on:
+ *   1. The "set/reset password" page after registration.
+ *   2. The WordPress user profile screen.
+ *
+ * Previously these styles lived inline inside recognition.php.
+ * Extracted during the pre-release audit (T1-6).
+ */
+
+/* ---------- Password-page section (post-registration) ---------- */
+.frl-password-page-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 5px;
+}
+.frl-password-page-section h2 {
+    margin-top: 0;
+    color: #1d2327;
+}
+.frl-password-page-section .description {
+    color: #666;
+    font-size: 13px;
+}
+
+/* ---------- Profile-page section ---------- */
+.frl-profile-section {
+    margin-top: var(--frl-space-6, 24px);
+    padding: var(--frl-space-5, 20px);
+    background: var(--frl-bg-primary, #ffffff);
+    border: var(--frl-border, 1px solid #e5e7eb);
+    font-family: var(--frl-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+.frl-profile-section h2 {
+    margin-top: 0;
+    margin-bottom: var(--frl-space-4, 16px);
+    padding-bottom: var(--frl-space-3, 12px);
+    border-bottom: var(--frl-border, 1px solid #e5e7eb);
+    font-size: var(--frl-font-size-lg, 18px);
+    font-weight: 600;
+    color: #1a1a1a;
+}
+.frl-profile-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--frl-space-4, 16px) 0;
+}
+.frl-profile-section th {
+    text-align: left;
+    padding: var(--frl-space-3, 12px);
+    background: var(--frl-bg-secondary, #f8f9fa);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #737373;
+}
+.frl-profile-section td {
+    padding: var(--frl-space-3, 12px);
+    border-bottom: var(--frl-border, 1px solid #e5e7eb);
+    font-size: 14px;
+}
+.frl-profile-section tr:hover td {
+    background: var(--frl-bg-hover, #f4f6f8);
+}
+.frl-profile-section .description {
+    color: #737373;
+    font-size: 13px;
+}
+.frl-no-faces {
+    padding: var(--frl-space-5, 20px);
+    background: var(--frl-info-bg, #ecfeff);
+    border: var(--frl-border, 1px solid #e5e7eb);
+    text-align: center;
+    margin: var(--frl-space-4, 16px) 0;
+}
+.frl-no-faces p {
+    margin: 0;
+    color: var(--frl-text-secondary, #525252);
+}
+
+/* ---------- Profile modal ---------- */
+.frl-profile-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--frl-space-5, 20px) var(--frl-space-6, 24px) var(--frl-space-4, 16px);
+    border-bottom: none;
+    gap: 12px;
+}
+.frl-profile-modal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.4;
+}
+.frl-profile-modal-title-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--frl-accent-subtle, #eff6ff);
+    color: var(--frl-accent, #0066ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.frl-profile-modal-title-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ---------- Profile video container (premium dark glass) ---------- */
+#frl-video-container-profile {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+    background: #0b1220;
+    background-image: radial-gradient(ellipse at center, #1e293b 0%, #0b1220 75%);
+    border: none;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+#frl-video-container-profile video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+#frl-video-container-profile canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+#frl-video-container-profile .frl-face-guide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62%;
+    aspect-ratio: 1;
+    border: 2px dashed rgba(0, 102, 255, 0.65);
+    border-radius: 50%;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: frl-camera-ring-pulse 2.4s ease-in-out infinite;
+}
+
+/* ---------- Profile progress bar ---------- */
+.frl-enroll-progress {
+    border-radius: 8px;
+}
+#frl-enroll-progress-bar-profile {
+    height: 100%;
+    background: linear-gradient(90deg, #0066ff, #00b4d8);
+    transition: width 150ms ease;
+    width: 0%;
+    display: block;
+    min-width: 2px;
+    border-radius: 8px;
+}
+
+/* ---------- Profile modal body & status ---------- */
+#frl-enroll-modal-profile .frl-modal-body {
+    padding: 0 24px 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+#frl-enroll-modal-profile .frl-enroll-progress {
+    height: 8px;
+    background: #f1f3f5;
+    overflow: hidden;
+    margin: 16px 0 0;
+    border-radius: 8px;
+}
+#frl-enroll-modal-profile .frl-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    padding: 10px 14px;
+    margin: 16px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 12px;
+    line-height: 1.4;
+}
+#frl-enroll-modal-profile .frl-status-info {
+    background: #f0f9ff;
+    color: #0ea5e9;
+    border: 1px solid #bae6fd;
+}
+#frl-enroll-modal-profile .frl-status-success {
+    background: #ecfdf5;
+    color: #10b981;
+    border: 1px solid #a7f3d0;
+}
+#frl-enroll-modal-profile .frl-status-error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+#frl-enroll-modal-profile .frl-status-warning {
+    background: #fffbeb;
+    color: #f59e0b;
+    border: 1px solid #fde68a;
+}
+#frl-enroll-modal-profile .frl-instructions {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    padding: 12px 0 0;
+    margin: 0;
+    line-height: 1.5;
+}
+#frl-enroll-progress-text-profile {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    margin-top: 8px;
+    min-height: 18px;
+}

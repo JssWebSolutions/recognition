@@ -1,0 +1,1860 @@
+/**
+ * Face Recognition Login - Public Styles
+ * Design System: Premium Admin Dashboard Inspired
+ *
+ * @package Face_Recognition_Login
+ */
+
+/* ==========================================================================
+   CSS Custom Properties - Admin Dashboard Design System
+   ========================================================================== */
+
+:root {
+    /* Typography */
+    --frl-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --frl-font-size-xs: 11px;
+    --frl-font-size-sm: 12px;
+    --frl-font-size-base: 14px;
+    --frl-font-size-md: 16px;
+    --frl-font-size-lg: 18px;
+    --frl-font-size-xl: 20px;
+    --frl-font-size-2xl: 24px;
+    --frl-font-weight-normal: 400;
+    --frl-font-weight-medium: 500;
+    --frl-font-weight-semibold: 600;
+    --frl-font-weight-bold: 700;
+
+    /* Colors - Light Mode (Premium) */
+    --frl-bg-primary: #ffffff;
+    --frl-bg-secondary: #f8f9fb;
+    --frl-bg-tertiary: #f1f3f5;
+    --frl-bg-hover: #f4f6f8;
+    --frl-text-primary: #0f172a;
+    --frl-text-secondary: #475569;
+    --frl-text-tertiary: #64748b;
+    --frl-text-inverted: #ffffff;
+    --frl-border: #e5e7eb;
+    --frl-border-strong: #d1d5db;
+    --frl-border-focus: #0066ff;
+
+    /* Accent - Action Blue */
+    --frl-accent: #0066ff;
+    --frl-accent-hover: #0052d4;
+    --frl-accent-subtle: #eff6ff;
+    --frl-accent-tint: #dbeafe;
+
+    /* Status Colors */
+    --frl-success: #10b981;
+    --frl-success-bg: #ecfdf5;
+    --frl-success-border: #a7f3d0;
+    --frl-warning: #f59e0b;
+    --frl-warning-bg: #fffbeb;
+    --frl-warning-border: #fde68a;
+    --frl-error: #dc2626; /* WCAG AA on white = 4.83:1 (large/UI components pass) */
+    --frl-error-bg: #fef2f2;
+    --frl-error-border: #fecaca;
+    --frl-info: #0ea5e9;
+    --frl-info-bg: #f0f9ff;
+    --frl-info-border: #bae6fd;
+
+    /* Border Radius - Modern rounded (premium look) */
+    --frl-radius: 12px;
+    --frl-radius-sm: 8px;
+    --frl-radius-md: 16px;
+    --frl-radius-lg: 24px;
+    --frl-radius-xl: 28px;
+    --frl-radius-pill: 999px;
+
+    /* Camera Viewport (Dark Theme) */
+    --frl-camera-bg: #0b1220;
+    --frl-camera-bg-gradient: radial-gradient(ellipse at center, #1e293b 0%, #0b1220 75%);
+    --frl-camera-radius: 20px;
+    --frl-camera-bracket-color: #0066ff;
+    --frl-camera-ring-color: rgba(0, 102, 255, 0.65);
+
+    /* Glass pills inside camera viewport */
+    --frl-glass-bg: rgba(15, 23, 42, 0.55);
+    --frl-glass-border: rgba(255, 255, 255, 0.08);
+    --frl-glass-blur: 14px;
+
+    /* Shadows - soft multi-layer (premium) */
+    --frl-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --frl-shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --frl-shadow-md: 0 6px 16px -4px rgba(15, 23, 42, 0.10), 0 2px 6px -2px rgba(15, 23, 42, 0.05);
+    --frl-shadow-lg: 0 18px 32px -8px rgba(15, 23, 42, 0.14), 0 4px 12px -4px rgba(15, 23, 42, 0.06);
+    --frl-shadow-xl: 0 24px 48px -12px rgba(15, 23, 42, 0.22), 0 8px 16px -6px rgba(15, 23, 42, 0.08);
+    --frl-shadow-glow: 0 0 0 4px rgba(0, 102, 255, 0.15);
+
+    /* Spacing */
+    --frl-space-1: 4px;
+    --frl-space-2: 8px;
+    --frl-space-3: 12px;
+    --frl-space-4: 16px;
+    --frl-space-5: 20px;
+    --frl-space-6: 24px;
+    --frl-space-7: 28px;
+    --frl-space-8: 32px;
+
+    /* Z-index */
+    --frl-z-modal: 100200;
+
+    /* Transitions */
+    --frl-transition-fast: 120ms cubic-bezier(0.16, 1, 0.3, 1);
+    --frl-transition-base: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    --frl-transition-slow: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Face Login Button - Admin Dashboard Style
+   ========================================================================== */
+
+.frl-face-login-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.frl-face-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--frl-space-2);
+    padding: var(--frl-space-2) var(--frl-space-4);
+    font-family: var(--frl-font-family);
+    font-size: var(--frl-font-size-base);
+    font-weight: var(--frl-font-weight-medium);
+    line-height: 1.5;
+    cursor: pointer;
+    border: var(--frl-border);
+    border-radius: var(--frl-radius);
+    background: var(--frl-bg-primary);
+    color: var(--frl-text-primary);
+    transition: var(--frl-transition-base);
+    box-shadow: var(--frl-shadow-sm);
+    text-decoration: none;
+}
+
+.frl-face-btn:hover {
+    background: var(--frl-bg-hover);
+    border-color: var(--frl-border-strong);
+    box-shadow: var(--frl-shadow-md);
+}
+
+.frl-face-btn:active {
+    transform: translateY(1px);
+}
+
+.frl-face-btn:focus-visible {
+    outline: 2px solid var(--frl-accent);
+    outline-offset: 2px;
+}
+
+.frl-btn-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frl-btn-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ==========================================================================
+   Modal - Premium (unified across main + addons)
+   ========================================================================== */
+
+.frl-modal {
+    display: none;
+    position: fixed;
+    z-index: var(--frl-z-modal);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.55);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    animation: frl-modal-fadeIn 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 24px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.frl-modal[style*="display: block"],
+.frl-modal[style*="display:block"] {
+    display: flex !important;
+}
+
+@keyframes frl-modal-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.frl-modal-content {
+    background: var(--frl-bg-secondary);
+    margin: 4vh 0;
+    padding: 0;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    border-radius: var(--frl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    max-height: calc(100vh - 48px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--frl-shadow-xl);
+    animation: frl-modal-slideIn 260ms cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.frl-modal-content.frl-modal-large {
+    max-width: 560px;
+}
+
+@keyframes frl-modal-slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Modal Header */
+.frl-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--frl-space-5) var(--frl-space-6) var(--frl-space-4);
+    border-bottom: none;
+    flex-shrink: 0;
+    gap: var(--frl-space-3);
+}
+
+.frl-modal-title {
+    margin: 0;
+    font-size: var(--frl-font-size-lg);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    line-height: 1.4;
+}
+
+.frl-modal-title-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--frl-accent-subtle);
+    color: var(--frl-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.frl-modal-title-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.frl-modal-subtitle {
+    margin: var(--frl-space-1) 0 0;
+    font-size: var(--frl-font-size-sm);
+    font-weight: var(--frl-font-weight-normal);
+    color: var(--frl-text-tertiary);
+    line-height: 1.5;
+}
+
+.frl-modal-title-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+/* Close Button */
+.frl-close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--frl-bg-primary);
+    border: 1px solid var(--frl-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--frl-transition-base);
+    color: var(--frl-text-tertiary);
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.frl-close:hover {
+    background: var(--frl-bg-hover);
+    color: var(--frl-text-primary);
+    border-color: var(--frl-border-strong);
+}
+
+.frl-close:focus-visible {
+    outline: 2px solid var(--frl-accent);
+    outline-offset: 2px;
+}
+
+.frl-close svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Modal Body */
+.frl-modal-body {
+    padding: 0 var(--frl-space-6) var(--frl-space-6);
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Modal Footer (link out to alternatives) */
+.frl-modal-footer {
+    padding: var(--frl-space-4) var(--frl-space-6) var(--frl-space-5);
+    border-top: 1px solid var(--frl-border);
+    text-align: center;
+    background: var(--frl-bg-primary);
+    flex-shrink: 0;
+}
+
+.frl-modal-footer-text {
+    color: var(--frl-text-tertiary);
+    font-size: var(--frl-font-size-sm);
+    margin-right: 6px;
+}
+
+.frl-modal-footer-link {
+    color: var(--frl-accent);
+    font-weight: var(--frl-font-weight-semibold);
+    font-size: var(--frl-font-size-sm);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--frl-transition-base);
+}
+
+.frl-modal-footer-link:hover {
+    color: var(--frl-accent-hover);
+    text-decoration: underline;
+}
+
+.frl-modal-footer-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ==========================================================================
+   Camera Viewport - Premium Dark Glass Design
+   ========================================================================== */
+
+#frl-video-container,
+#frl-enroll-video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+    background: var(--frl-camera-bg);
+    background-image: var(--frl-camera-bg-gradient);
+    border: none;
+    overflow: hidden;
+    border-radius: var(--frl-camera-radius);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+#frl-video,
+#frl-enroll-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+#frl-canvas,
+#frl-enroll-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+
+/* Decorative face guide ring (large dashed circle) */
+.frl-face-guide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62%;
+    aspect-ratio: 1;
+    border: 2px dashed var(--frl-camera-ring-color);
+    border-radius: 50%;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: frl-camera-ring-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes frl-camera-ring-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+    50%      { transform: translate(-50%, -50%) scale(1.04); opacity: 1; }
+}
+
+/* Face silhouette (decorative, inside the ring) */
+.frl-face-silhouette {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38%;
+    aspect-ratio: 3 / 4;
+    pointer-events: none;
+    opacity: 0.35;
+    z-index: 1;
+}
+
+.frl-face-silhouette svg {
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* 4 blue corner brackets framing the camera viewport */
+.frl-camera-brackets {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.frl-camera-bracket {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: var(--frl-camera-bracket-color);
+    border-style: solid;
+    border-width: 0;
+}
+
+.frl-camera-bracket.tl { top: 14px; left: 14px;  border-top-width: 3px; border-left-width: 3px;  border-top-left-radius: 4px; }
+.frl-camera-bracket.tr { top: 14px; right: 14px; border-top-width: 3px; border-right-width: 3px; border-top-right-radius: 4px; }
+.frl-camera-bracket.bl { bottom: 14px; left: 14px;  border-bottom-width: 3px; border-left-width: 3px;  border-bottom-left-radius: 4px; }
+.frl-camera-bracket.br { bottom: 14px; right: 14px; border-bottom-width: 3px; border-right-width: 3px; border-bottom-right-radius: 4px; }
+
+/* Status pill (top-left, dark glass) */
+.frl-camera-status-pill {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--frl-glass-bg);
+    -webkit-backdrop-filter: blur(var(--frl-glass-blur));
+    backdrop-filter: blur(var(--frl-glass-blur));
+    border: 1px solid var(--frl-glass-border);
+    border-radius: var(--frl-radius-pill);
+    color: #fff;
+    font-size: 12px;
+    font-weight: var(--frl-font-weight-medium);
+    pointer-events: none;
+}
+
+.frl-camera-status-pill .frl-pill-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55);
+    animation: frl-pill-pulse 1.6s ease-in-out infinite;
+}
+
+.frl-camera-status-pill.is-warning .frl-pill-dot { background: #f59e0b; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.55); }
+.frl-camera-status-pill.is-error   .frl-pill-dot { background: #ef4444; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55); }
+.frl-camera-status-pill.is-off     .frl-pill-dot { background: #94a3b8; animation: none; box-shadow: none; }
+
+@keyframes frl-pill-pulse {
+    0%   { box-shadow: 0 0 0 0   rgba(16, 185, 129, 0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0   rgba(16, 185, 129, 0); }
+}
+
+/* Switch camera button (top-right, dark glass) */
+.frl-camera-switch-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--frl-glass-bg);
+    -webkit-backdrop-filter: blur(var(--frl-glass-blur));
+    backdrop-filter: blur(var(--frl-glass-blur));
+    border: 1px solid var(--frl-glass-border);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: var(--frl-transition-base);
+    pointer-events: auto;
+}
+
+.frl-camera-switch-btn:hover {
+    background: rgba(15, 23, 42, 0.75);
+    transform: scale(1.05);
+}
+
+.frl-camera-switch-btn:focus-visible {
+    outline: 2px solid var(--frl-accent);
+    outline-offset: 2px;
+}
+
+.frl-camera-switch-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Position pill (bottom-center, dark glass) */
+.frl-camera-position-pill {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--frl-glass-bg);
+    -webkit-backdrop-filter: blur(var(--frl-glass-blur));
+    backdrop-filter: blur(var(--frl-glass-blur));
+    border: 1px solid var(--frl-glass-border);
+    border-radius: var(--frl-radius-pill);
+    color: #fff;
+    font-size: 12px;
+    font-weight: var(--frl-font-weight-medium);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 0.2px;
+}
+
+.frl-camera-position-pill svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Camera banner (light blue tint with shield icon) */
+.frl-camera-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: var(--frl-space-4) 0 0;
+    padding: 10px 14px;
+    background: var(--frl-accent-subtle);
+    border: 1px solid var(--frl-accent-tint);
+    border-radius: var(--frl-radius);
+    color: var(--frl-accent);
+    font-size: var(--frl-font-size-sm);
+    font-weight: var(--frl-font-weight-medium);
+    line-height: 1.4;
+}
+
+.frl-camera-banner.is-warning {
+    background: var(--frl-warning-bg);
+    border-color: var(--frl-warning-border);
+    color: #92400e;
+}
+
+.frl-camera-banner.is-error {
+    background: var(--frl-error-bg);
+    border-color: var(--frl-error-border);
+    color: #991b1b;
+}
+
+.frl-camera-banner-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.frl-camera-banner-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.frl-camera-banner-text {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Trust Signals Row (4 columns)
+   ========================================================================== */
+
+.frl-trust-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--frl-space-3);
+    margin: var(--frl-space-4) 0 0;
+    padding: var(--frl-space-4);
+    background: var(--frl-bg-primary);
+    border: 1px solid var(--frl-border);
+    border-radius: var(--frl-radius);
+}
+
+@media (max-width: 480px) {
+    .frl-trust-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.frl-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.frl-trust-item-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.frl-trust-item-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.frl-trust-item-icon.is-blue   { background: var(--frl-accent-subtle); color: var(--frl-accent); }
+.frl-trust-item-icon.is-green  { background: var(--frl-success-bg);    color: var(--frl-success); }
+.frl-trust-item-icon.is-purple { background: #f3e8ff;                   color: #9333ea; }
+.frl-trust-item-icon.is-amber  { background: var(--frl-warning-bg);    color: var(--frl-warning); }
+
+.frl-trust-item-label {
+    font-size: 11px;
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    line-height: 1.3;
+    letter-spacing: 0.1px;
+}
+
+/* ==========================================================================
+   Status Messages - Premium Pill Design
+   ========================================================================== */
+
+.frl-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--frl-space-2);
+    text-align: center;
+    padding: 10px 14px;
+    margin: var(--frl-space-4) 0 0;
+    font-size: var(--frl-font-size-sm);
+    font-weight: var(--frl-font-weight-semibold);
+    border-radius: var(--frl-radius);
+    border: 1px solid transparent;
+    line-height: 1.4;
+}
+
+.frl-status-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.frl-status-info {
+    background: var(--frl-info-bg);
+    color: var(--frl-info);
+    border-color: var(--frl-info-border);
+}
+
+.frl-status-success {
+    background: var(--frl-success-bg);
+    color: var(--frl-success);
+    border-color: var(--frl-success-border);
+}
+
+.frl-status-warning {
+    background: var(--frl-warning-bg);
+    color: var(--frl-warning);
+    border-color: var(--frl-warning-border);
+}
+
+.frl-status-error {
+    background: var(--frl-error-bg);
+    color: var(--frl-error);
+    border-color: var(--frl-error-border);
+}
+
+/* Instructions */
+.frl-instructions {
+    text-align: center;
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    padding: var(--frl-space-3) 0;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Progress Bar - Admin Dashboard Style
+   ========================================================================== */
+
+.frl-enroll-progress {
+    height: 8px;
+    background: var(--frl-bg-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: var(--frl-space-4) 0;
+    position: relative;
+}
+
+#frl-enroll-progress-bar {
+    height: 100%;
+    min-width: 2px;
+    background: var(--frl-accent);
+    transition: width 150ms ease;
+    width: 0%;
+    display: block;
+}
+
+#frl-progress-text,
+#frl-enroll-progress-text,
+#frl-enroll-progress-text-profile {
+    text-align: center;
+    font-size: var(--frl-font-size-sm);
+    font-weight: var(--frl-font-weight-medium);
+    color: var(--frl-text-tertiary);
+    margin-top: var(--frl-space-2);
+    min-height: 18px;
+}
+
+/* ==========================================================================
+   Buttons - Premium Rounded Design
+   ========================================================================== */
+
+.frl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--frl-space-2);
+    padding: 10px 18px;
+    font-family: var(--frl-font-family);
+    font-size: var(--frl-font-size-base);
+    font-weight: var(--frl-font-weight-semibold);
+    line-height: 1.4;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: var(--frl-radius);
+    transition: var(--frl-transition-base);
+    text-decoration: none;
+}
+
+.frl-btn:focus-visible {
+    outline: 2px solid var(--frl-accent);
+    outline-offset: 2px;
+}
+
+.frl-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.frl-btn-primary {
+    background: var(--frl-accent);
+    color: var(--frl-text-inverted);
+    border-color: var(--frl-accent);
+    box-shadow: 0 1px 2px rgba(0, 102, 255, 0.20);
+}
+
+.frl-btn-primary:hover:not(:disabled) {
+    background: var(--frl-accent-hover);
+    border-color: var(--frl-accent-hover);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+.frl-btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.frl-btn-secondary {
+    background: var(--frl-bg-primary);
+    color: var(--frl-text-primary);
+    border-color: var(--frl-border);
+}
+
+.frl-btn-secondary:hover:not(:disabled) {
+    background: var(--frl-bg-hover);
+    border-color: var(--frl-border-strong);
+}
+
+.frl-btn-danger {
+    background: var(--frl-error);
+    color: white;
+    border-color: var(--frl-error);
+}
+
+.frl-btn-danger:hover:not(:disabled) {
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+.frl-btn-sm {
+    padding: 6px 12px;
+    font-size: var(--frl-font-size-sm);
+}
+
+.frl-btn-lg {
+    padding: 12px 22px;
+    font-size: var(--frl-font-size-md);
+}
+
+/* Button full width in modal */
+.frl-modal .button {
+    display: block;
+    width: 100%;
+    margin-top: var(--frl-space-4);
+}
+
+/* ==========================================================================
+   Dashboard Styles - Admin Dashboard Style
+   ========================================================================== */
+
+.frl-dashboard {
+    background: var(--frl-bg-secondary);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: var(--frl-font-family);
+}
+
+.frl-dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--frl-bg-primary);
+    border: var(--frl-border);
+    box-shadow: var(--frl-shadow-sm);
+}
+
+.frl-dashboard-header {
+    background: var(--frl-bg-primary);
+    border-bottom: var(--frl-border);
+    padding: var(--frl-space-6);
+}
+
+.frl-dashboard-header h1 {
+    margin: 0 0 var(--frl-space-2);
+    font-size: var(--frl-font-size-2xl);
+    font-weight: var(--frl-font-weight-bold);
+    color: var(--frl-text-primary);
+}
+
+.frl-dashboard-header p {
+    margin: 0;
+    color: var(--frl-text-tertiary);
+}
+
+.frl-dashboard-content {
+    padding: var(--frl-space-6);
+}
+
+.frl-dashboard-section {
+    margin-bottom: var(--frl-space-6);
+}
+
+.frl-dashboard-section:last-child {
+    margin-bottom: 0;
+}
+
+.frl-dashboard-section h2 {
+    margin: 0 0 var(--frl-space-4);
+    padding-bottom: var(--frl-space-3);
+    border-bottom: var(--frl-border);
+    font-size: var(--frl-font-size-lg);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+}
+
+.frl-dashboard-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.frl-dashboard-section table th,
+.frl-dashboard-section table td {
+    padding: var(--frl-space-3) var(--frl-space-4);
+    text-align: left;
+    border-bottom: var(--frl-border);
+}
+
+.frl-dashboard-section table th {
+    background: var(--frl-bg-secondary);
+    font-weight: var(--frl-font-weight-semibold);
+    font-size: var(--frl-font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: var(--frl-text-tertiary);
+}
+
+.frl-dashboard-section table tr:hover td {
+    background: var(--frl-bg-hover);
+}
+
+.frl-dashboard-footer {
+    padding: var(--frl-space-5) var(--frl-space-6);
+    background: var(--frl-bg-secondary);
+    border-top: var(--frl-border);
+    display: flex;
+    justify-content: center;
+    gap: var(--frl-space-4);
+}
+
+.frl-dashboard-footer a {
+    color: var(--frl-accent);
+    text-decoration: none;
+    font-weight: var(--frl-font-weight-medium);
+}
+
+.frl-dashboard-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Empty State - Admin Dashboard Style
+   ========================================================================== */
+
+.frl-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--frl-space-8) var(--frl-space-6);
+    text-align: center;
+    background: var(--frl-bg-secondary);
+    border: var(--frl-border);
+}
+
+.frl-empty-state-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--frl-bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--frl-space-4);
+}
+
+.frl-empty-state-icon svg {
+    width: 32px;
+    height: 32px;
+    color: var(--frl-text-tertiary);
+}
+
+.frl-empty-state-title {
+    font-size: var(--frl-font-size-md);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    margin-bottom: var(--frl-space-2);
+}
+
+.frl-empty-state-desc {
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    max-width: 300px;
+    margin-bottom: var(--frl-space-4);
+}
+
+/* ==========================================================================
+   Camera Permission Overlay
+   ========================================================================== */
+
+.frl-permission-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--frl-bg-tertiary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--frl-text-tertiary);
+    text-align: center;
+    padding: var(--frl-space-4);
+}
+
+.frl-permission-overlay svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--frl-space-3);
+}
+
+/* ==========================================================================
+   Loading Spinner
+   ========================================================================== */
+
+.frl-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-2);
+}
+
+.frl-loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--frl-border);
+    border-top-color: var(--frl-accent);
+    animation: frl-spin 0.6s linear infinite;
+}
+
+@keyframes frl-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Responsive - Mobile (Premium)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .frl-modal {
+        padding: 12px;
+        align-items: flex-end;
+    }
+
+    .frl-modal-content {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: 92vh;
+        border-radius: var(--frl-radius-lg) var(--frl-radius-lg) 0 0;
+        animation: frl-modal-slideUp 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes frl-modal-slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .frl-modal-header {
+        padding: var(--frl-space-4) var(--frl-space-5) var(--frl-space-3);
+    }
+
+    .frl-modal-title {
+        font-size: var(--frl-font-size-md);
+    }
+
+    .frl-modal-body {
+        padding: 0 var(--frl-space-5) var(--frl-space-5);
+    }
+
+    .frl-modal-footer {
+        padding: var(--frl-space-3) var(--frl-space-5) var(--frl-space-4);
+    }
+
+    #frl-video-container,
+    #frl-enroll-video-container {
+        aspect-ratio: 1/1;
+    }
+
+    .frl-camera-position-pill {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .frl-trust-row {
+        padding: var(--frl-space-3);
+        gap: var(--frl-space-2);
+    }
+
+    .frl-trust-item-label {
+        font-size: 10px;
+    }
+
+    .frl-status {
+        font-size: var(--frl-font-size-xs);
+        padding: 8px 12px;
+    }
+
+    .frl-instructions {
+        font-size: var(--frl-font-size-xs);
+    }
+}
+
+@media (max-width: 380px) {
+    .frl-modal-title {
+        font-size: var(--frl-font-size-base);
+    }
+
+    .frl-modal-title-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .frl-close {
+        width: 32px;
+        height: 32px;
+    }
+
+    .frl-face-guide {
+        width: 60%;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .frl-modal-content {
+        max-height: 95vh;
+        flex-direction: row;
+    }
+
+    .frl-modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--frl-space-3) var(--frl-space-4);
+        border-bottom: none;
+        border-right: var(--frl-border);
+    }
+
+    .frl-close {
+        position: absolute;
+        top: var(--frl-space-2);
+        right: var(--frl-space-2);
+    }
+
+    .frl-modal-body {
+        padding: var(--frl-space-3) var(--frl-space-4);
+    }
+
+    #frl-video-container,
+    #frl-enroll-video-container {
+        max-height: 80vh;
+        width: 50%;
+    }
+}
+
+/* ==========================================================================
+   Login Page Specific
+   ========================================================================== */
+
+.login-action-confirm #frl-face-login-btn {
+    width: 100%;
+    margin-bottom: var(--frl-space-2);
+}
+
+.login form {
+    padding-bottom: var(--frl-space-4);
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .frl-face-btn,
+    #frl-enroll-progress-bar,
+    .frl-modal-content {
+        transition: none;
+        animation: none;
+    }
+}
+
+.frl-face-btn:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--frl-accent);
+    outline-offset: 2px;
+}
+
+/* Screen reader only */
+.frl-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+   App Layout - Sidebar + Main (Admin Dashboard Style)
+   ========================================================================== */
+
+.frl-app {
+    display: flex;
+    min-height: 100vh;
+    background: var(--frl-bg-secondary);
+}
+
+/* Sidebar */
+.frl-sidebar {
+    width: 240px;
+    background: var(--frl-bg-primary);
+    border-right: var(--frl-border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-shrink: 0;
+    transition: width var(--frl-transition-base), transform var(--frl-transition-base);
+    z-index: 100;
+}
+
+.frl-sidebar.collapsed {
+    width: 64px;
+}
+
+.frl-sidebar-header {
+    padding: var(--frl-space-4) var(--frl-space-5);
+    border-bottom: var(--frl-border);
+    flex-shrink: 0;
+}
+
+.frl-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    text-decoration: none;
+    color: var(--frl-text-primary);
+    font-weight: var(--frl-font-weight-semibold);
+}
+
+.frl-sidebar-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    color: var(--frl-text-inverted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: var(--frl-radius);
+    overflow: hidden;
+}
+
+.frl-sidebar-logo-icon svg {
+    width: 18px;
+    height: 18px;
+    color: var(--frl-text-inverted);
+}
+
+.frl-sidebar-logo-img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.frl-sidebar-logo-text {
+    font-size: var(--frl-font-size-md);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.frl-sidebar.collapsed .frl-sidebar-logo-text,
+.frl-sidebar.collapsed .frl-nav-section-title,
+.frl-sidebar.collapsed .frl-nav-link-text {
+    display: none;
+}
+
+.frl-sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--frl-space-3) 0;
+}
+
+.frl-nav-section {
+    padding: 0 var(--frl-space-3);
+    margin-bottom: var(--frl-space-4);
+}
+
+.frl-nav-section-title {
+    font-size: var(--frl-font-size-xs);
+    font-weight: var(--frl-font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--frl-text-tertiary);
+    padding: var(--frl-space-2) var(--frl-space-3);
+    margin-bottom: var(--frl-space-1);
+}
+
+.frl-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.frl-nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+.frl-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    padding: var(--frl-space-2) var(--frl-space-3);
+    color: var(--frl-text-secondary);
+    text-decoration: none;
+    border-radius: var(--frl-radius);
+    font-size: var(--frl-font-size-base);
+    font-weight: var(--frl-font-weight-medium);
+    transition: var(--frl-transition-base);
+    border: 1px solid transparent;
+}
+
+.frl-nav-link svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--frl-text-tertiary);
+    transition: var(--frl-transition-base);
+}
+
+.frl-nav-link:hover {
+    background: var(--frl-bg-hover);
+    color: var(--frl-text-primary);
+}
+
+.frl-nav-link:hover svg {
+    color: var(--frl-text-primary);
+}
+
+.frl-nav-link.active {
+    background: var(--frl-accent-subtle);
+    color: var(--frl-accent);
+    border-color: var(--frl-accent-subtle);
+}
+
+.frl-nav-link.active svg {
+    color: var(--frl-accent);
+}
+
+.frl-nav-link-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.frl-sidebar-footer {
+    padding: var(--frl-space-3) var(--frl-space-3);
+    border-top: var(--frl-border);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.frl-sidebar-toggle {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: var(--frl-border);
+    cursor: pointer;
+    color: var(--frl-text-secondary);
+    transition: var(--frl-transition-base);
+    border-radius: var(--frl-radius);
+}
+
+.frl-sidebar-toggle:hover {
+    background: var(--frl-bg-hover);
+    color: var(--frl-text-primary);
+}
+
+.frl-sidebar-toggle svg {
+    width: 16px;
+    height: 16px;
+}
+
+.frl-sidebar.collapsed .frl-sidebar-toggle svg {
+    transform: rotate(180deg);
+}
+
+/* Main Content */
+.frl-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--frl-bg-secondary);
+}
+
+/* Mobile Header */
+.frl-mobile-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--frl-space-3) var(--frl-space-4);
+    background: var(--frl-bg-primary);
+    border-bottom: var(--frl-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.frl-mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: var(--frl-border);
+    cursor: pointer;
+    color: var(--frl-text-primary);
+    border-radius: var(--frl-radius);
+}
+
+.frl-mobile-menu-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Header */
+.frl-header {
+    background: var(--frl-bg-primary);
+    border-bottom: var(--frl-border);
+    padding: var(--frl-space-5) var(--frl-space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--frl-space-4);
+    flex-wrap: wrap;
+}
+
+.frl-header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    flex: 1;
+    min-width: 0;
+}
+
+.frl-header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    flex-shrink: 0;
+}
+
+.frl-header-title {
+    font-size: var(--frl-font-size-xl);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Theme toggle */
+.frl-theme-toggle {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--frl-bg-primary);
+    border: var(--frl-border);
+    cursor: pointer;
+    color: var(--frl-text-secondary);
+    transition: var(--frl-transition-base);
+    border-radius: var(--frl-radius);
+}
+
+.frl-theme-toggle:hover {
+    background: var(--frl-bg-hover);
+    color: var(--frl-text-primary);
+    border-color: var(--frl-border-strong);
+}
+
+.frl-theme-toggle:focus-visible {
+    outline: 2px solid var(--frl-accent);
+    outline-offset: 2px;
+}
+
+.frl-theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+.frl-icon-sun,
+.frl-icon-moon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Content */
+.frl-content {
+    flex: 1;
+    padding: var(--frl-space-6);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Status Badge */
+.frl-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-2);
+    padding: 4px var(--frl-space-2);
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-secondary);
+    font-size: var(--frl-font-size-xs);
+    font-weight: var(--frl-font-weight-medium);
+    border-radius: 999px;
+    border: var(--frl-border);
+    line-height: 1.4;
+}
+
+.frl-status-badge.success {
+    background: var(--frl-success-bg);
+    color: var(--frl-success);
+    border-color: var(--frl-success-border);
+}
+
+.frl-status-dot {
+    width: 8px;
+    height: 8px;
+    background: currentColor;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   KPI Grid - Admin Dashboard Style
+   ========================================================================== */
+
+.frl-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--frl-space-4);
+    margin-bottom: var(--frl-space-6);
+}
+
+.frl-kpi-card {
+    background: var(--frl-bg-primary);
+    border: var(--frl-border);
+    padding: var(--frl-space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--frl-space-3);
+    transition: var(--frl-transition-base);
+}
+
+.frl-kpi-card:hover {
+    box-shadow: var(--frl-shadow-sm);
+}
+
+.frl-kpi-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--frl-space-3);
+}
+
+.frl-kpi-label {
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    font-weight: var(--frl-font-weight-medium);
+    line-height: 1.4;
+}
+
+.frl-kpi-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--frl-accent-subtle);
+    color: var(--frl-accent);
+    flex-shrink: 0;
+    border-radius: var(--frl-radius);
+}
+
+.frl-kpi-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.frl-kpi-value {
+    font-size: var(--frl-font-size-2xl);
+    font-weight: var(--frl-font-weight-bold);
+    color: var(--frl-text-primary);
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+.frl-kpi-change {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-1);
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    line-height: 1.4;
+}
+
+.frl-kpi-change.positive {
+    color: var(--frl-success);
+}
+
+.frl-kpi-change svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Card Component - Admin Dashboard Style
+   ========================================================================== */
+
+.frl-card {
+    background: var(--frl-bg-primary);
+    border: var(--frl-border);
+    margin-bottom: var(--frl-space-5);
+}
+
+.frl-card:last-child {
+    margin-bottom: 0;
+}
+
+.frl-card-header {
+    padding: var(--frl-space-5) var(--frl-space-5) var(--frl-space-4);
+    border-bottom: var(--frl-border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--frl-space-3);
+    flex-wrap: wrap;
+}
+
+.frl-card-title {
+    margin: 0 0 var(--frl-space-1);
+    font-size: var(--frl-font-size-md);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    line-height: 1.4;
+}
+
+.frl-card-subtitle {
+    margin: 0;
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    line-height: 1.5;
+}
+
+.frl-card-body {
+    padding: var(--frl-space-5);
+}
+
+/* ==========================================================================
+   Modal Size Variants
+   ========================================================================== */
+
+.frl-modal-large {
+    max-width: 560px;
+    width: 95%;
+}
+
+.frl-modal-large #frl-enroll-video-container {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 4 / 3;
+}
+
+.frl-modal-large #frl-enroll-video,
+.frl-modal-large #frl-enroll-canvas {
+    max-height: 315px;
+}
+
+/* ==========================================================================
+   Dark Mode
+   ========================================================================== */
+
+[data-frl-theme="dark"] {
+    --frl-bg-primary: #1a1a1a;
+    --frl-bg-secondary: #0f0f0f;
+    --frl-bg-tertiary: #262626;
+    --frl-bg-hover: #2a2a2a;
+    --frl-text-primary: #f5f5f5;
+    --frl-text-secondary: #d4d4d4;
+    --frl-text-tertiary: #a3a3a3;
+    --frl-text-inverted: #1a1a1a;
+    --frl-border: #2e2e2e;
+    --frl-border-strong: #404040;
+    --frl-accent: #3b82f6;
+    --frl-accent-hover: #2563eb;
+    --frl-accent-subtle: #1e3a5f;
+    --frl-accent-tint: #1e3a5f;
+}
+
+[data-frl-theme="dark"] .frl-modal {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+[data-frl-theme="dark"] .frl-modal-content {
+    background: #161616;
+    border-color: var(--frl-border);
+}
+
+[data-frl-theme="dark"] .frl-modal-footer {
+    background: #1a1a1a;
+}
+
+[data-frl-theme="dark"] .frl-trust-row {
+    background: #161616;
+}
+
+[data-frl-theme="dark"] .frl-camera-banner {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.30);
+    color: #93c5fd;
+}
+
+[data-frl-theme="dark"] .frl-sidebar {
+    background: #161616;
+}
+
+[data-frl-theme="dark"] .frl-nav-link.active {
+    color: var(--frl-text-primary);
+}
+
+[data-frl-theme="dark"] .frl-kpi-icon {
+    color: var(--frl-text-inverted);
+}
+
+[data-frl-theme="dark"] .frl-feature-icon.success {
+    color: var(--frl-text-inverted);
+}
+
+/* Camera viewport stays dark in BOTH themes — that's the point. */
+[data-frl-theme="dark"] #frl-enroll-video-container,
+[data-frl-theme="dark"] #frl-video-container {
+    background: var(--frl-camera-bg);
+    background-image: var(--frl-camera-bg-gradient);
+}
+
+/* ==========================================================================
+   Mobile Responsive - App Layout
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .frl-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .frl-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 200;
+        transform: translateX(-100%);
+        box-shadow: var(--frl-shadow-lg);
+    }
+
+    .frl-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .frl-sidebar.collapsed {
+        width: 240px;
+    }
+
+    .frl-sidebar.collapsed .frl-sidebar-logo-text,
+    .frl-sidebar.collapsed .frl-nav-section-title,
+    .frl-sidebar.collapsed .frl-nav-link-text {
+        display: block;
+    }
+
+    .frl-mobile-header {
+        display: flex;
+    }
+
+    .frl-header {
+        padding: var(--frl-space-4);
+    }
+
+    .frl-header-title {
+        font-size: var(--frl-font-size-lg);
+    }
+
+    .frl-content {
+        padding: var(--frl-space-4);
+    }
+
+    .frl-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .frl-card-header,
+    .frl-card-body {
+        padding: var(--frl-space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .frl-header {
+        padding: var(--frl-space-3) var(--frl-space-4);
+    }
+
+    .frl-header-title {
+        font-size: var(--frl-font-size-md);
+    }
+
+    .frl-content {
+        padding: var(--frl-space-3);
+    }
+
+    .frl-kpi-card {
+        padding: var(--frl-space-4);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-frl-theme] *,
+    .frl-sidebar,
+    .frl-nav-link,
+    .frl-kpi-card {
+        transition: none;
+    }
+}

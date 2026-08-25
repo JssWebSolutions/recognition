@@ -1,0 +1,1056 @@
+# Copyright (C) 2026 JSS Websolutions
+# This file is distributed under the GPL-2.0-or-later License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Recognition 1.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com/support\n"
+"POT-Creation-Date: 2026-08-03 16:44:30+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: English\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: recognition\n"
+
+msgid "%d %s ago"
+msgstr ""
+
+msgid "%s ago"
+msgstr ""
+
+msgid "A reload just happened. Please wait a minute before re-validating again."
+msgstr ""
+
+msgid "Account Created"
+msgstr ""
+
+msgid "Account Lockout"
+msgstr ""
+
+msgid "Account Status"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Activate License"
+msgstr ""
+
+msgid "Activate Your License"
+msgstr ""
+
+msgid "Activate your license to unlock all premium features."
+msgstr ""
+
+msgid "Activate your license to unlock all premium features. The free plan includes the basics below."
+msgstr ""
+
+msgid "Activate your license to unlock premium features."
+msgstr ""
+
+msgid "Activated"
+msgstr ""
+
+msgid "Activating…"
+msgstr ""
+
+msgid "Activation Limit Exceeded"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Activity Reports"
+msgstr ""
+
+msgid "Advanced Analytics Dashboard"
+msgstr ""
+
+msgid "After setting up your account, you can enroll your face to login without passwords."
+msgstr ""
+
+msgid "All %d logs deleted."
+msgstr ""
+
+msgid "All face profiles deleted for user #%d."
+msgstr ""
+
+msgid "All face profiles deleted for user."
+msgstr ""
+
+msgid "All features included in your plan are unlocked on this site."
+msgstr ""
+
+msgid "All users have face enrolled!"
+msgstr ""
+
+msgid "Allow camera access"
+msgstr ""
+
+msgid "Allow password login as fallback"
+msgstr ""
+
+msgid "An error occurred. Please try again."
+msgstr ""
+
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+msgid "Analytics &amp; Insights"
+msgstr ""
+
+msgid "Are you sure you want to deactivate this license on this site?"
+msgstr ""
+
+msgid "Are you sure you want to delete this face?"
+msgstr ""
+
+msgid "Auth Logs"
+msgstr ""
+
+msgid "Authenticating..."
+msgstr ""
+
+msgid "Authentication failed"
+msgstr ""
+
+msgid "Authentication History"
+msgstr ""
+
+msgid "Authentication Logs"
+msgstr ""
+
+msgid "Auto-Delete Old Logs"
+msgstr ""
+
+msgid "Automatic Plugin Updates"
+msgstr ""
+
+msgid "Available in the Premium version. <a href=\"%s\">Activate your license</a> to unlock this feature."
+msgstr ""
+
+msgid "Back to Dashboard"
+msgstr ""
+
+msgid "Basic Settings"
+msgstr ""
+
+msgid "Both methods available"
+msgstr ""
+
+msgid "Camera access requires HTTPS in most browsers."
+msgstr ""
+
+msgid "Camera error"
+msgstr ""
+
+msgid "Camera permission denied"
+msgstr ""
+
+msgid "Camera ready"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Capturing samples..."
+msgstr ""
+
+msgid "Change user"
+msgstr ""
+
+msgid "Choose a user to enroll face"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Configure general face login settings."
+msgstr ""
+
+msgid "Configure logging and data retention."
+msgstr ""
+
+msgid "Configure security settings for face authentication."
+msgstr ""
+
+msgid "Configure user enrollment settings."
+msgstr ""
+
+msgid "Could not reach license server."
+msgstr ""
+
+msgid "Could not reach the license server."
+msgstr ""
+
+msgid "Could not reach the license server. Please try again later."
+msgstr ""
+
+msgid "Could not reach the license server. Your previous activation will be used."
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Custom Branding"
+msgstr ""
+
+msgid "Custom Log Retention"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "Deactivate License"
+msgstr ""
+
+msgid "Deactivating…"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete data on uninstall"
+msgstr ""
+
+msgid "Deleted %d old logs."
+msgstr ""
+
+msgid "Detecting face..."
+msgstr ""
+
+msgid "Device"
+msgstr ""
+
+msgid "Device name updated."
+msgstr ""
+
+msgid "Dismiss this notice."
+msgstr ""
+
+msgid "Domain Mismatch"
+msgstr ""
+
+msgid "Done!"
+msgstr ""
+
+msgid "Download your biometric data as a JSON file."
+msgstr ""
+
+msgid "Email Address"
+msgstr ""
+
+msgid "Enable Face Login"
+msgstr ""
+
+msgid "Enable face recognition login"
+msgstr ""
+
+msgid "Enable liveness detection (blink/smile)"
+msgstr ""
+
+msgid "Enable rate limiting"
+msgstr ""
+
+msgid "Enable secure, passwordless login in under a minute"
+msgstr ""
+
+msgid "Encrypt stored face descriptors"
+msgstr ""
+
+msgid "Encrypted at rest"
+msgstr ""
+
+msgid "Encrypted Face Descriptors"
+msgstr ""
+
+msgid "Enroll Another User"
+msgstr ""
+
+msgid "Enroll Face"
+msgstr ""
+
+msgid "Enroll Face Now"
+msgstr ""
+
+msgid "Enroll My Face"
+msgstr ""
+
+msgid "Enroll my face for quick login next time"
+msgstr ""
+
+msgid "Enroll New Face"
+msgstr ""
+
+msgid "Enroll Your Face"
+msgstr ""
+
+msgid "Enroll your face to login using facial recognition. Your face data is stored securely and never leaves this website."
+msgstr ""
+
+msgid "Enrolled & ready"
+msgstr ""
+
+msgid "Enrolled Users"
+msgstr ""
+
+msgid "Enrolled: %d / %d"
+msgstr ""
+
+msgid "Enter the license key and email address you used at the time of purchase to activate premium features."
+msgstr ""
+
+msgid "Enter your license key to unlock premium features"
+msgstr ""
+
+msgid "Error deleting face"
+msgstr ""
+
+msgid "Expired"
+msgstr ""
+
+msgid "Expires"
+msgstr ""
+
+msgid "Export Data"
+msgstr ""
+
+msgid "Export My Data"
+msgstr ""
+
+msgid "Extended Log Retention"
+msgstr ""
+
+msgid "Extensions"
+msgstr ""
+
+msgid "Face + Password"
+msgstr ""
+
+msgid "Face already enrolled"
+msgstr ""
+
+msgid "Face Capture"
+msgstr ""
+
+msgid "Face detected"
+msgstr ""
+
+msgid "Face enrolled successfully for user %s."
+msgstr ""
+
+msgid "Face Enrolled Successfully!"
+msgstr ""
+
+msgid "Face Enrollment"
+msgstr ""
+
+msgid "Face Enrollment - Face Login"
+msgstr ""
+
+msgid "Face enrollment complete!"
+msgstr ""
+
+msgid "Face enrollment failed"
+msgstr ""
+
+msgid "Recognition"
+msgstr ""
+
+msgid "Recognition Dashboard"
+msgstr ""
+
+msgid "Recognition License:"
+msgstr ""
+
+msgid "Recognition Premium"
+msgstr ""
+
+msgid "Face profile deleted."
+msgstr ""
+
+msgid "Face profile not found."
+msgstr ""
+
+msgid "Face Profiles"
+msgstr ""
+
+msgid "Face recognition failed. Please try again or use password."
+msgstr ""
+
+msgid "Face Recognition Login"
+msgstr ""
+
+msgid "Failed Attempt Limits"
+msgstr ""
+
+msgid "Failed to delete face profiles."
+msgstr ""
+
+msgid "Failed to delete faces."
+msgstr ""
+
+msgid "Failed to delete logs."
+msgstr ""
+
+msgid "Failed to delete old logs."
+msgstr ""
+
+msgid "Failed to load face detection models"
+msgstr ""
+
+msgid "Failed to save face data."
+msgstr ""
+
+msgid "Failed to update device name."
+msgstr ""
+
+msgid "Free"
+msgstr ""
+
+msgid "Full site access"
+msgstr ""
+
+msgid "General Settings"
+msgstr ""
+
+msgid "Get a License"
+msgstr ""
+
+msgid "Get a license key to access all premium features, priority support, and future updates."
+msgstr ""
+
+msgid "Go to Dashboard"
+msgstr ""
+
+msgid "Go to Dashboard Now"
+msgstr ""
+
+msgid "Go to Login"
+msgstr ""
+
+msgid "hour"
+msgstr ""
+
+msgid "How we handle your biometric data"
+msgstr ""
+
+msgid "HTTPS is required for face login"
+msgstr ""
+
+msgid "HTTPS is required for face login."
+msgstr ""
+
+msgid "In Grace Period"
+msgstr ""
+
+msgid "Included in Free"
+msgstr ""
+
+msgid "Included in Premium"
+msgstr ""
+
+msgid "Initializing camera..."
+msgstr ""
+
+msgid "Invalid"
+msgstr ""
+
+msgid "Invalid face data format."
+msgstr ""
+
+msgid "Invalid face data. Please try again."
+msgstr ""
+
+msgid "Invalid face descriptor."
+msgstr ""
+
+msgid "Invalid face ID."
+msgstr ""
+
+msgid "Invalid parameters."
+msgstr ""
+
+msgid "Invalid user ID."
+msgstr ""
+
+msgid "Invalid user."
+msgstr ""
+
+msgid "Just now"
+msgstr ""
+
+msgid "Last Used"
+msgstr ""
+
+msgid "Last Verified"
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid "License activated successfully."
+msgstr ""
+
+msgid "License Activation"
+msgstr ""
+
+msgid "License deactivated on this site."
+msgstr ""
+
+msgid "License details and management"
+msgstr ""
+
+msgid "License is not valid."
+msgstr ""
+
+msgid "License is valid."
+msgstr ""
+
+msgid "License Key"
+msgstr ""
+
+msgid "License server rejected the request (HTTP %d)."
+msgstr ""
+
+msgid "License server returned an error (HTTP %d). Please try again later."
+msgstr ""
+
+msgid "License server unreachable. Cached activation used."
+msgstr ""
+
+msgid "License server unreachable. Using cached activation."
+msgstr ""
+
+msgid "License server unreachable. Using cached license."
+msgstr ""
+
+msgid "License was just activated. Please wait a few seconds before re-validating."
+msgstr ""
+
+msgid "License was recently validated. Please wait a moment."
+msgstr ""
+
+msgid "Liveness Detection"
+msgstr ""
+
+msgid "Loading face detection models..."
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Lockout duration (minutes):"
+msgstr ""
+
+msgid "Log authentication attempts"
+msgstr ""
+
+msgid "Logging Settings"
+msgstr ""
+
+msgid "Login Button Text"
+msgstr ""
+
+msgid "Login Method"
+msgstr ""
+
+msgid "Login successful!"
+msgstr ""
+
+msgid "Login with Face"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "Look at the camera, ensure good lighting, and slowly turn your head to capture multiple angles."
+msgstr ""
+
+msgid "Lower values are more strict (0.30-0.70, default: 0.45)"
+msgstr ""
+
+msgid "mail@website.com"
+msgstr ""
+
+msgid "Manage License"
+msgstr ""
+
+msgid "Manage your license and unlock premium features."
+msgstr ""
+
+msgid "Management"
+msgstr ""
+
+msgid "Match Threshold"
+msgstr ""
+
+msgid "Max failed attempts:"
+msgstr ""
+
+msgid "Maximum number of face profiles (%d) reached. Please delete an existing profile first."
+msgstr ""
+
+msgid "Maximum number of face profiles a user can enroll (1-20). The default is 1 and higher values require a Premium license."
+msgstr ""
+
+msgid "Maximum number of face profiles reached."
+msgstr ""
+
+msgid "Maximum number of faces reached. Delete an existing face to add a new one."
+msgstr ""
+
+msgid "Member"
+msgstr ""
+
+msgid "minute"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "Multi-Factor Authentication"
+msgstr ""
+
+msgid "Multiple faces detected"
+msgstr ""
+
+msgid "Multisite Network Support"
+msgstr ""
+
+msgid "Multisite Support"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "Never shared"
+msgstr ""
+
+msgid "No face data provided."
+msgstr ""
+
+msgid "No face detected"
+msgstr ""
+
+msgid "No face enrolled yet. Click \"Enroll Face\" to get started."
+msgstr ""
+
+msgid "No face enrolled. Please enroll your face first."
+msgstr ""
+
+msgid "No faces enrolled. Please enroll your face first."
+msgstr ""
+
+msgid "No license key configured."
+msgstr ""
+
+msgid "Not Activated"
+msgstr ""
+
+msgid "Not enrolled yet"
+msgstr ""
+
+msgid "Not in Free"
+msgstr ""
+
+msgid "Not included"
+msgstr ""
+
+msgid "Notice dismissed."
+msgstr ""
+
+msgid "Number of days to keep authentication logs (0 to disable auto-deletion)"
+msgstr ""
+
+msgid "Offline (Cached)"
+msgstr ""
+
+msgid "Open menu"
+msgstr ""
+
+msgid "Or skip this step - you can enroll later from your profile page."
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Password Fallback"
+msgstr ""
+
+msgid "Permission denied."
+msgstr ""
+
+msgid "PHP Version"
+msgstr ""
+
+msgid "Plan"
+msgstr ""
+
+msgid "Plan Features"
+msgstr ""
+
+msgid "Please align your face"
+msgstr ""
+
+msgid "Please blink"
+msgstr ""
+
+msgid "Please enter a valid email address."
+msgstr ""
+
+msgid "Please enter a valid license key."
+msgstr ""
+
+msgid "Please select a user first"
+msgstr ""
+
+msgid "Please wait a few seconds before trying again."
+msgstr ""
+
+msgid "Plugin Version"
+msgstr ""
+
+msgid "Position face in the camera frame"
+msgstr ""
+
+msgid "Position the user\\'s face within the frame and ensure good lighting."
+msgstr ""
+
+msgid "Position your face"
+msgstr ""
+
+msgid "Position your face in the camera and look at the screen"
+msgstr ""
+
+msgid "Position your face within the circle and ensure good lighting"
+msgstr ""
+
+msgid "Premium"
+msgstr ""
+
+msgid "Premium feature"
+msgstr ""
+
+msgid "Premium feature - activate your license"
+msgstr ""
+
+msgid "Premium Updates"
+msgstr ""
+
+msgid "Prevents photo-based authentication attacks."
+msgstr ""
+
+msgid "Priority Email Support"
+msgstr ""
+
+msgid "Priority Support"
+msgstr ""
+
+msgid "Privacy & Security"
+msgstr ""
+
+msgid "PRO"
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
+
+msgid "Rate Limiting"
+msgstr ""
+
+msgid "Ready to unlock all features?"
+msgstr ""
+
+msgid "Redirecting to your dashboard in"
+msgstr ""
+
+msgid "Re-enroll Face"
+msgstr ""
+
+msgid "Registered Email"
+msgstr ""
+
+msgid "Removable any time"
+msgstr ""
+
+msgid "Remove all face profiles, logs, and plugin options when this plugin is deleted. If disabled, deactivating the plugin keeps your data intact so you can reactivate later."
+msgstr ""
+
+msgid "Require HTTPS"
+msgstr ""
+
+msgid "Require HTTPS connection for face login"
+msgstr ""
+
+msgid "Re-validate Now"
+msgstr ""
+
+msgid "Revoked"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Search users..."
+msgstr ""
+
+msgid "second"
+msgstr ""
+
+msgid "seconds..."
+msgstr ""
+
+msgid "Security &amp; Protection"
+msgstr ""
+
+msgid "Security check failed."
+msgstr ""
+
+msgid "Security check failed. Please reload the page and try again."
+msgstr ""
+
+msgid "Security check failed. Please try again."
+msgstr ""
+
+msgid "Security Settings"
+msgstr ""
+
+msgid "Select a user from the list to start enrollment"
+msgstr ""
+
+msgid "Select User"
+msgstr ""
+
+msgid "Server and plugin details"
+msgstr ""
+
+msgid "Set up face login for quick and secure access. Your face data is stored locally and never shared."
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Settings updated."
+msgstr ""
+
+msgid "Site Domain"
+msgstr ""
+
+msgid "Skip for Now"
+msgstr ""
+
+msgid "Standard"
+msgstr ""
+
+msgid "Standard access"
+msgstr ""
+
+msgid "Start Camera & Enroll"
+msgstr ""
+
+msgid "Support &amp; Updates"
+msgstr ""
+
+msgid "Suspended"
+msgstr ""
+
+msgid "System Information"
+msgstr ""
+
+msgid "The \"%1$s\" page is a premium feature. Please activate your license to access it. <a href=\"%2$s\">Activate now</a>."
+msgstr ""
+
+msgid "The email address you used at the time of purchase."
+msgstr ""
+
+msgid "The license domain does not match this site. Premium features are disabled."
+msgstr ""
+
+msgid "The user can now log in using face recognition."
+msgstr ""
+
+msgid "This domain will be associated with your license activation."
+msgstr ""
+
+msgid "This is a Premium Feature. Activate your plugin license to access this page."
+msgstr ""
+
+msgid "This is a premium feature. Please activate your license to use it."
+msgstr ""
+
+msgid "This license is registered for %1$s but the current site is %2$s."
+msgstr ""
+
+msgid "Toggle sidebar"
+msgstr ""
+
+msgid "Toggle theme"
+msgstr ""
+
+msgid "Too many failed attempts. Please try again later."
+msgstr ""
+
+msgid "Too many failed attempts. Please wait a few minutes."
+msgstr ""
+
+msgid "Unauthorized access."
+msgstr ""
+
+msgid "Uninstall Settings"
+msgstr ""
+
+msgid "User Experience"
+msgstr ""
+
+msgid "User faces deleted."
+msgstr ""
+
+msgid "User ID is required."
+msgstr ""
+
+msgid "User Management"
+msgstr ""
+
+msgid "User not found."
+msgstr ""
+
+msgid "User Settings"
+msgstr ""
+
+msgid "Users can still log in with username/password if face login fails."
+msgstr ""
+
+msgid "Users Without Face Enrolled"
+msgstr ""
+
+msgid "Uses AES-256 encryption for additional security."
+msgstr ""
+
+msgid "Validating…"
+msgstr ""
+
+msgid "WC Logs"
+msgstr ""
+
+msgid "WC Reports"
+msgstr ""
+
+msgid "We will ask for permission to use your camera. Images are processed locally in your browser."
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "Welcome aboard!"
+msgstr ""
+
+msgid "Welcome, %s"
+msgstr ""
+
+msgid "What happens to your data when the plugin is deleted"
+msgstr ""
+
+msgid "WooCommerce"
+msgstr ""
+
+msgid "WooCommerce Integration"
+msgstr ""
+
+msgid "WordPress Version"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "You can always enroll your face later from your profile page."
+msgstr ""
+
+msgid "You can delete your face profile at any time from your account settings."
+msgstr ""
+
+msgid "You can find your license key in the purchase confirmation email or in your customer dashboard."
+msgstr ""
+
+msgid "You can log in with your face any time. Redirecting you to your dashboard in a moment."
+msgstr ""
+
+msgid "You can now log in instantly using your face. Your password is still available as a fallback."
+msgstr ""
+
+msgid "You can now log in using your face recognition. Your password remains available as a fallback."
+msgstr ""
+
+msgid "You cannot enroll a face for another user."
+msgstr ""
+
+msgid "You do not have permission to access this page."
+msgstr ""
+
+msgid "You do not have permission to delete this face profile."
+msgstr ""
+
+msgid "You do not have permission to enroll face for this user."
+msgstr ""
+
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+msgid "You do not have permission."
+msgstr ""
+
+msgid "You have reached the maximum number of enrolled faces."
+msgstr ""
+
+msgid "You must be logged in to enroll your face."
+msgstr ""
+
+msgid "You must be logged in."
+msgstr ""
+
+msgid "Your account %s has been created successfully. A password-setup email has been sent to your inbox. You can now enroll your face to enable passwordless login."
+msgstr ""
+
+msgid "Your account has been created successfully. You can now enroll your face to enable passwordless login."
+msgstr ""
+
+msgid "Your browser does not support camera access"
+msgstr ""
+
+msgid "Your data stays on this site. We do not transmit it to any third party."
+msgstr ""
+
+msgid "Your face data is stored as an encrypted mathematical descriptor - never as a photo."
+msgstr ""
+
+msgid "Your License"
+msgstr ""
+
+msgid "Your license has been revoked. Please contact support."
+msgstr ""
+
+msgid "Your license has expired. Renew to continue receiving premium updates."
+msgstr ""
+
+msgid "Your license has reached its activation limit."
+msgstr ""
+
+msgid "Your license is no longer active. Premium features have been disabled."
+msgstr ""
+
+msgid "Your license is suspended. Please contact support."
+msgstr ""
+
+msgid "Your license key is invalid. Please verify and reactivate."
+msgstr ""
+
+msgid "Your license was activated. All premium features are now available."
+msgstr ""
+

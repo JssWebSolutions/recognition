@@ -1,0 +1,1080 @@
+/**
+ * License Activation Admin Styles
+ *
+ * Modern, attractive styles for the License Activation admin page.
+ * Built on top of the FRL design tokens (frl-admin.css) so it adapts
+ * to light and dark themes automatically.
+ *
+ * @package Face_Recognition_Login
+ * @subpackage License
+ *
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   1. Page Layout
+   ========================================================================== */
+
+.frl-license-page {
+    /* Inherits frl-app layout (flex row). */
+    width: 100%;
+}
+
+.frl-license-page .frl-header-subtitle {
+    margin: var(--frl-space-1) 0 0 0;
+    font-size: var(--frl-font-size-base);
+    color: var(--frl-text-tertiary);
+    font-weight: var(--frl-font-weight-normal);
+    line-height: var(--frl-line-height-normal);
+}
+
+.frl-license-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: var(--frl-space-5);
+    margin-bottom: var(--frl-space-5);
+}
+
+@media (max-width: 1100px) {
+    .frl-license-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   2. License Cards (Modern Card System)
+   ========================================================================== */
+
+.frl-license-card {
+    background: var(--frl-bg-surface);
+    border: var(--frl-border-width) solid var(--frl-border);
+    border-radius: var(--frl-radius-md, 8px);
+    box-shadow: var(--frl-shadow-xs);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow var(--frl-transition-base), transform var(--frl-transition-base);
+}
+
+.frl-license-card:hover {
+    box-shadow: var(--frl-shadow-sm);
+}
+
+.frl-license-card--sidebar {
+    align-self: start;
+}
+
+.frl-license-card--features {
+    margin-top: 0;
+}
+
+.frl-license-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--frl-space-3);
+    padding: var(--frl-space-5) var(--frl-space-6);
+    border-bottom: var(--frl-border-width) solid var(--frl-border);
+    background: var(--frl-bg-primary);
+    flex-wrap: wrap;
+}
+
+.frl-license-card__header--features {
+    background: linear-gradient(135deg,
+        var(--frl-bg-primary) 0%,
+        var(--frl-bg-secondary) 100%);
+    border-bottom: var(--frl-border-width) solid var(--frl-border);
+}
+
+.frl-license-card__title-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    flex: 1;
+    min-width: 0;
+}
+
+.frl-license-card__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-secondary);
+    border: var(--frl-border-width) solid var(--frl-border);
+}
+
+.frl-license-card__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.frl-license-card__icon--active {
+    background: var(--frl-success-bg);
+    color: var(--frl-success);
+    border-color: var(--frl-success-border);
+}
+
+.frl-license-card__icon--inactive {
+    background: var(--frl-accent-muted);
+    color: var(--frl-accent);
+    border-color: transparent;
+}
+
+.frl-license-card__icon--info {
+    background: var(--frl-info-bg);
+    color: var(--frl-info);
+    border-color: var(--frl-info-border);
+}
+
+.frl-license-card__icon--features {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #b45309;
+    border-color: #fde68a;
+}
+
+[data-frl-theme="dark"] .frl-license-card__icon--features {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+.frl-license-card__title {
+    margin: 0;
+    font-size: var(--frl-font-size-xl);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    line-height: var(--frl-line-height-tight);
+}
+
+.frl-license-card__subtitle {
+    margin: 2px 0 0 0;
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    line-height: var(--frl-line-height-normal);
+}
+
+.frl-license-card__body {
+    padding: var(--frl-space-5) var(--frl-space-6);
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .frl-license-card__header,
+    .frl-license-card__body {
+        padding: var(--frl-space-4);
+    }
+}
+
+/* ==========================================================================
+   3. Status Badge
+   ========================================================================== */
+
+.frl-license-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: var(--frl-font-size-xs);
+    font-weight: var(--frl-font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-secondary);
+    line-height: 1;
+    border: var(--frl-border-width) solid transparent;
+    white-space: nowrap;
+}
+
+.frl-license-status__dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 3px currentColor;
+    opacity: 0.25;
+    flex-shrink: 0;
+}
+
+.frl-license-status--active {
+    background: var(--frl-success-bg);
+    color: var(--frl-success);
+    border-color: var(--frl-success-border);
+}
+
+.frl-license-status--grace {
+    background: var(--frl-warning-bg);
+    color: var(--frl-warning);
+    border-color: var(--frl-warning-border);
+}
+
+.frl-license-status--offline {
+    background: var(--frl-info-bg);
+    color: var(--frl-info);
+    border-color: var(--frl-info-border);
+}
+
+.frl-license-status--inactive {
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-secondary);
+    border-color: var(--frl-border);
+}
+
+.frl-license-status--invalid,
+.frl-license-status--expired,
+.frl-license-status--revoked,
+.frl-license-status--suspended,
+.frl-license-status--domain_mismatch,
+.frl-license-status--limit_exceeded {
+    background: var(--frl-error-bg);
+    color: var(--frl-error);
+    border-color: var(--frl-error-border);
+}
+
+/* ==========================================================================
+   4. License Details List
+   ========================================================================== */
+
+.frl-license-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: var(--frl-border-width) solid var(--frl-border);
+    border-radius: var(--frl-radius-md, 8px);
+    overflow: hidden;
+    background: var(--frl-bg-primary);
+}
+
+.frl-license-detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--frl-space-4);
+    padding: var(--frl-space-3) var(--frl-space-4);
+    border-bottom: var(--frl-border-width) solid var(--frl-border);
+    transition: background var(--frl-transition-fast);
+}
+
+.frl-license-detail-row:last-child {
+    border-bottom: 0;
+}
+
+.frl-license-detail-row:hover {
+    background: var(--frl-bg-hover);
+}
+
+.frl-license-detail-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-2);
+    font-size: var(--frl-font-size-sm);
+    font-weight: var(--frl-font-weight-medium);
+    color: var(--frl-text-secondary);
+    flex-shrink: 0;
+}
+
+.frl-license-detail-label svg {
+    width: 14px;
+    height: 14px;
+    color: var(--frl-text-tertiary);
+    flex-shrink: 0;
+}
+
+.frl-license-detail-value {
+    font-size: var(--frl-font-size-base);
+    color: var(--frl-text-primary);
+    font-weight: var(--frl-font-weight-medium);
+    text-align: right;
+    word-break: break-word;
+}
+
+.frl-license-detail-value--mono {
+    font-family: var(--frl-font-mono, 'JetBrains Mono', Consolas, monospace);
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-secondary);
+}
+
+.frl-license-key {
+    font-family: var(--frl-font-mono, 'JetBrains Mono', Consolas, monospace);
+    font-size: var(--frl-font-size-sm);
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-primary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: var(--frl-border-width) solid var(--frl-border);
+    letter-spacing: 1px;
+    user-select: all;
+}
+
+.frl-license-domain {
+    font-family: var(--frl-font-mono, 'JetBrains Mono', Consolas, monospace);
+    font-size: var(--frl-font-size-sm);
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-primary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: var(--frl-border-width) solid var(--frl-border);
+    word-break: break-all;
+}
+
+.frl-license-domain--readonly {
+    display: inline-block;
+    background: var(--frl-bg-secondary);
+    color: var(--frl-text-secondary);
+}
+
+/* Plan pill inside details list */
+.frl-license-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: var(--frl-font-size-xs);
+    font-weight: var(--frl-font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+}
+
+.frl-license-pill--plan {
+    background: var(--frl-accent-muted);
+    color: var(--frl-accent);
+}
+
+/* ==========================================================================
+   5. License Form (Activation)
+   ========================================================================== */
+
+.frl-license-intro {
+    margin: 0 0 var(--frl-space-4) 0;
+    padding: var(--frl-space-3) var(--frl-space-4);
+    background: var(--frl-accent-muted);
+    border: var(--frl-border-width) solid transparent;
+    border-radius: var(--frl-radius-md, 8px);
+    color: var(--frl-text-secondary);
+    font-size: var(--frl-font-size-base);
+    line-height: var(--frl-line-height-relaxed);
+}
+
+.frl-license-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--frl-space-4);
+}
+
+.frl-license-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--frl-space-2);
+}
+
+.frl-license-form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.frl-license-form-label-text {
+    font-size: var(--frl-font-size-base);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+}
+
+.frl-license-form-label-hint {
+    font-size: var(--frl-font-size-sm);
+    color: var(--frl-text-tertiary);
+    line-height: var(--frl-line-height-normal);
+}
+
+.frl-input--license-key {
+    font-family: var(--frl-font-mono, 'JetBrains Mono', Consolas, monospace);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    max-width: 480px;
+    font-size: var(--frl-font-size-md);
+    padding: var(--frl-space-3) var(--frl-space-4);
+}
+
+.frl-input--email {
+    max-width: 380px;
+    padding: var(--frl-space-3) var(--frl-space-4);
+}
+
+.frl-license-form-actions {
+    margin-top: var(--frl-space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    flex-wrap: wrap;
+}
+
+/* Spinner inside the submit button */
+.frl-btn-spinner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    animation: frl-btn-spin 0.8s linear infinite;
+}
+
+.frl-btn-spinner svg {
+    width: 16px;
+    height: 16px;
+}
+
+.frl-btn.frl-license-loading .frl-btn-label {
+    opacity: 0.7;
+}
+
+.frl-btn.frl-license-loading .frl-btn-spinner {
+    display: inline-flex;
+}
+
+.frl-btn.frl-license-loading svg:not(.frl-btn-spinner svg):not(.frl-icon-sun):not(.frl-icon-moon) {
+    display: none;
+}
+
+@keyframes frl-btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .frl-btn-spinner {
+        animation: none;
+    }
+}
+
+/* ==========================================================================
+   6. Action Buttons Row
+   ========================================================================== */
+
+.frl-license-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    flex-wrap: wrap;
+    margin-top: var(--frl-space-5);
+    padding-top: var(--frl-space-4);
+    border-top: var(--frl-border-width) solid var(--frl-border);
+}
+
+.frl-license-deactivate-form {
+    display: inline-block;
+    margin: 0;
+}
+
+/* ==========================================================================
+   7. Messages
+   ========================================================================== */
+
+.frl-license-message {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    padding: var(--frl-space-3) var(--frl-space-4);
+    border-radius: var(--frl-radius-md, 8px);
+    font-size: var(--frl-font-size-base);
+    margin: var(--frl-space-4) 0 0 0;
+    border: var(--frl-border-width) solid transparent;
+    line-height: var(--frl-line-height-normal);
+}
+
+.frl-license-message svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.frl-license-message--success {
+    background: var(--frl-success-bg);
+    border-color: var(--frl-success-border);
+    color: var(--frl-success);
+}
+
+.frl-license-message--error {
+    background: var(--frl-error-bg);
+    border-color: var(--frl-error-border);
+    color: var(--frl-error);
+}
+
+.frl-license-message--info {
+    background: var(--frl-info-bg);
+    border-color: var(--frl-info-border);
+    color: var(--frl-info);
+}
+
+/* ==========================================================================
+   8. Plan Features Grid (Attractive Comparison)
+   ========================================================================== */
+
+.frl-license-plan-legend {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-2);
+    flex-shrink: 0;
+}
+
+.frl-license-plan-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: var(--frl-font-size-xs);
+    font-weight: var(--frl-font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.frl-license-plan-pill svg {
+    width: 12px;
+    height: 12px;
+}
+
+.frl-license-plan-pill--free {
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-secondary);
+    border: var(--frl-border-width) solid var(--frl-border);
+}
+
+.frl-license-plan-pill--premium {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #78350f;
+    border: 1px solid #f59e0b;
+}
+
+[data-frl-theme="dark"] .frl-license-plan-pill--premium {
+    color: #451a03;
+}
+
+.frl-license-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--frl-space-4);
+}
+
+.frl-license-feature-group {
+    background: var(--frl-bg-primary);
+    border: var(--frl-border-width) solid var(--frl-border);
+    border-radius: var(--frl-radius-md, 10px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--frl-transition-base), box-shadow var(--frl-transition-base);
+}
+
+.frl-license-feature-group:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--frl-shadow-sm);
+}
+
+.frl-license-feature-group__header {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3);
+    padding: var(--frl-space-4);
+    border-bottom: var(--frl-border-width) solid var(--frl-border);
+    background: var(--frl-bg-secondary);
+}
+
+.frl-license-feature-group__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.frl-license-feature-group__icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.frl-license-feature-group--blue .frl-license-feature-group__icon {
+    background: var(--frl-accent-muted);
+    color: var(--frl-accent);
+}
+
+.frl-license-feature-group--purple .frl-license-feature-group__icon {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+[data-frl-theme="dark"] .frl-license-feature-group--purple .frl-license-feature-group__icon {
+    background: rgba(167, 139, 250, 0.15);
+    color: #a78bfa;
+}
+
+.frl-license-feature-group--emerald .frl-license-feature-group__icon {
+    background: var(--frl-success-bg);
+    color: var(--frl-success);
+}
+
+.frl-license-feature-group--amber .frl-license-feature-group__icon {
+    background: var(--frl-warning-bg);
+    color: var(--frl-warning);
+}
+
+.frl-license-feature-group__title {
+    margin: 0;
+    font-size: var(--frl-font-size-md);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-primary);
+    line-height: var(--frl-line-height-tight);
+}
+
+.frl-license-feature-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.frl-license-feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--frl-space-3);
+    padding: var(--frl-space-3) var(--frl-space-4);
+    border-bottom: var(--frl-border-width) solid var(--frl-border);
+    font-size: var(--frl-font-size-base);
+    color: var(--frl-text-primary);
+    transition: background var(--frl-transition-fast);
+}
+
+.frl-license-feature-item:last-child {
+    border-bottom: 0;
+}
+
+.frl-license-feature-item:hover {
+    background: var(--frl-bg-hover);
+}
+
+.frl-license-feature-item__name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: var(--frl-font-weight-medium);
+}
+
+.frl-license-feature-item__badges {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-1);
+    flex-shrink: 0;
+}
+
+.frl-license-feature-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: var(--frl-border-width) solid transparent;
+    flex-shrink: 0;
+}
+
+.frl-license-feature-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.frl-license-feature-badge--free {
+    background: var(--frl-bg-tertiary);
+    color: var(--frl-text-tertiary);
+    border-color: var(--frl-border);
+}
+
+.frl-license-feature-badge--na {
+    background: var(--frl-bg-secondary);
+    color: var(--frl-text-tertiary);
+    border-color: var(--frl-border);
+}
+
+.frl-license-feature-badge--premium {
+    background: var(--frl-success-bg);
+    color: var(--frl-success);
+    border-color: var(--frl-success-border);
+}
+
+.frl-license-feature-badge--locked {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #b45309;
+    border-color: #fde68a;
+}
+
+[data-frl-theme="dark"] .frl-license-feature-badge--locked {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.08) 100%);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+.frl-license-feature-badge--na-premium {
+    background: var(--frl-bg-secondary);
+    color: var(--frl-text-tertiary);
+    border-color: var(--frl-border);
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   9. Call to Action Banner
+   ========================================================================== */
+
+.frl-license-cta {
+    margin-top: var(--frl-space-5);
+    padding: var(--frl-space-5) var(--frl-space-6);
+    border-radius: var(--frl-radius-md, 10px);
+    background: linear-gradient(135deg, var(--frl-accent) 0%, var(--frl-accent-hover) 100%);
+    color: var(--frl-text-inverted);
+    position: relative;
+    overflow: hidden;
+}
+
+.frl-license-cta::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.frl-license-cta::after {
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.frl-license-cta__content {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-4);
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.frl-license-cta__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--frl-text-inverted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    backdrop-filter: blur(8px);
+}
+
+.frl-license-cta__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.frl-license-cta__text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.frl-license-cta__title {
+    margin: 0 0 4px 0;
+    font-size: var(--frl-font-size-lg);
+    font-weight: var(--frl-font-weight-semibold);
+    color: var(--frl-text-inverted);
+    line-height: var(--frl-line-height-tight);
+}
+
+.frl-license-cta__desc {
+    margin: 0;
+    font-size: var(--frl-font-size-sm);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: var(--frl-line-height-normal);
+}
+
+.frl-license-cta .frl-btn-primary {
+    background: #ffffff;
+    color: var(--frl-accent);
+    border-color: #ffffff;
+    flex-shrink: 0;
+}
+
+.frl-license-cta .frl-btn-primary:hover:not(:disabled) {
+    background: var(--frl-bg-secondary);
+    color: var(--frl-accent-hover);
+    border-color: var(--frl-bg-secondary);
+}
+
+@media (max-width: 600px) {
+    .frl-license-cta__content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+/* ==========================================================================
+   10. Loading State
+   ========================================================================== */
+
+.frl-license-loading {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .frl-license-loading::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 18px;
+        margin: -9px 0 0 -9px;
+        border: 2px solid var(--frl-border);
+        border-top-color: var(--frl-accent);
+        border-radius: 50%;
+        animation: frl-license-spin 0.8s linear infinite;
+    }
+}
+
+@keyframes frl-license-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .frl-license-loading::after {
+        animation: none;
+        border-top-color: var(--frl-border-strong);
+    }
+}
+
+/* ==========================================================================
+   11. Legacy Compatibility (used by old templates / inline styles)
+   ========================================================================== */
+
+.frl-features-table {
+    margin-top: var(--frl-space-3);
+    overflow-x: auto;
+}
+
+.frl-features-table .widefat th,
+.frl-features-table .widefat td {
+    padding: var(--frl-space-3);
+}
+
+.frl-feature-col-free,
+.frl-feature-col-premium {
+    text-align: center;
+    width: 120px;
+}
+
+.frl-features-table .dashicons-yes {
+    color: var(--frl-success);
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+}
+
+.frl-features-table .dashicons-minus {
+    color: var(--frl-text-tertiary);
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+}
+
+.frl-features-table .dashicons-lock {
+    color: var(--frl-warning);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   12. Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 782px) {
+    .frl-license-card__header {
+        padding: var(--frl-space-4);
+    }
+
+    .frl-license-card__body {
+        padding: var(--frl-space-4);
+    }
+
+    .frl-license-card__title {
+        font-size: var(--frl-font-size-lg);
+    }
+
+    .frl-license-detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--frl-space-1);
+    }
+
+    .frl-license-detail-value {
+        text-align: left;
+    }
+
+    .frl-license-plan-legend {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .frl-input--license-key,
+    .frl-input--email {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .frl-license-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   13. License Notice (Dismissible Admin Banner)
+   ========================================================================== */
+
+.frl-license-notice.frl-license-notice--warning.is-dismissible {
+    border-left: 4px solid #dba617;
+}
+
+.frl-license-notice.frl-license-notice--global.is-dismissible {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3, 12px);
+    padding: var(--frl-space-3, 12px) 40px var(--frl-space-3, 12px) var(--frl-space-4, 16px);
+    border-left: 4px solid #dba617;
+}
+
+.frl-license-notice__inner {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.frl-license-notice__content {
+    display: flex;
+    align-items: center;
+    gap: var(--frl-space-3, 12px);
+    flex: 1;
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.frl-license-notice__text {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--frl-space-2, 8px);
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    padding-right: 8px;
+}
+
+.frl-license-notice__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--frl-space-2, 8px);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.frl-license-notice__action {
+    margin: 0;
+    vertical-align: baseline;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    line-height: normal;
+}
+
+.frl-license-notice__action .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 1;
+}
+
+.frl-license-notice__action--primary {
+    background: #dba617;
+    border-color: #b8870a;
+    color: #fff;
+    text-shadow: none;
+}
+
+.frl-license-notice__action--primary:hover,
+.frl-license-notice__action--primary:focus {
+    background: #c08d0a;
+    border-color: #9a7309;
+    color: #fff;
+}
+
+.frl-license-notice__action--secondary {
+    color: #50575e;
+}
+
+@media (max-width: 782px) {
+    .frl-license-notice.frl-license-notice--global.is-dismissible {
+        flex-wrap: wrap;
+    }
+
+    .frl-license-notice__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--frl-space-2, 8px);
+    }
+
+    .frl-license-notice__content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--frl-space-2, 8px);
+    }
+
+    .frl-license-notice__text {
+        padding-right: 0;
+    }
+
+    .frl-license-notice__actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .frl-license-notice__action {
+        transition: none;
+    }
+}

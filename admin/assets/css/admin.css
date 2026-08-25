@@ -1,0 +1,149 @@
+/**
+ * Recognition - Admin Styles
+ *
+ * @package Face_Recognition_Login
+ */
+
+/* CSS Custom Properties for theming */
+:root {
+    --frl-admin-primary: #2271b1;
+    --frl-admin-primary-hover: #135e96;
+    --frl-admin-success: #00a32a;
+    --frl-admin-error: #d63638;
+    --frl-admin-warning: #dba617;
+    --frl-admin-info: #72aee6;
+    --frl-admin-border: #ddd;
+    --frl-admin-bg: #f0f0f1;
+    --frl-admin-text: #1d2327;
+    --frl-admin-text-muted: #50575e;
+    --frl-admin-radius: 4px;
+    --frl-admin-spacing: 15px;
+}
+
+.frl-admin-wrap h1 {
+    margin-bottom: 20px;
+}
+
+.frl-admin-wrap .form-table th {
+    padding: 15px;
+}
+
+.frl-admin-wrap .form-table td {
+    padding: 15px 10px;
+}
+
+.frl-admin-wrap .form-table input[type="number"],
+.frl-admin-wrap .form-table input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+}
+
+.frl-admin-wrap .form-table input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.frl-admin-wrap .form-table label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.frl-admin-wrap .description {
+    color: #666;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.frl-admin-wrap .widefat {
+    margin-top: 20px;
+}
+
+.frl-admin-wrap .tablenav {
+    margin: 15px 0;
+}
+
+.frl-admin-wrap .pagination-links {
+    display: inline-flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+/* Dashboard widgets */
+.frl-status-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.frl-status-box h2 {
+    margin-top: 0;
+}
+
+/* Admin notices */
+.frl-admin-notice {
+    border-left: 4px solid #2271b1;
+    padding: 15px;
+    background: #f8f9fa;
+    margin: 15px 0;
+}
+
+/* Loading state */
+.frl-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.frl-loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #2271b1;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: frl-admin-spin 0.6s linear infinite;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@keyframes frl-admin-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .frl-admin-spin,
+    .frl-loading::after,
+    .frl-message {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Success/Error messages */
+.frl-message {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.frl-message.success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.frl-message.error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.frl-message.info {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}

@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Gradient for background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for face outline -->
+    <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7b2cbf;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient for scan line -->
+    <linearGradient id="scanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0" />
+      <stop offset="20%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7b2cbf;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Strong glow for particles -->
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Inner shadow for depth -->
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Clip path for face area -->
+    <clipPath id="faceClip">
+      <ellipse cx="200" cy="180" rx="85" ry="105"/>
+    </clipPath>
+  </defs>
+  
+  <style>
+    /* Background pulse animation */
+    @keyframes bgPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    
+    /* Scan line animation */
+    @keyframes scanLine {
+      0% { transform: translateY(60px); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(300px); opacity: 0; }
+    }
+    
+    /* Face outline draw animation */
+    @keyframes drawFace {
+      0% { stroke-dashoffset: 800; }
+      100% { stroke-dashoffset: 0; }
+    }
+    
+    /* Face fill pulse */
+    @keyframes facePulse {
+      0%, 100% { opacity: 0.05; }
+      50% { opacity: 0.15; }
+    }
+    
+    /* Eye blink animation */
+    @keyframes blink {
+      0%, 45%, 55%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.1); }
+    }
+    
+    /* Eye glow pulse */
+    @keyframes eyeGlow {
+      0%, 100% { filter: drop-shadow(0 0 3px #00d4ff); }
+      50% { filter: drop-shadow(0 0 8px #00d4ff) drop-shadow(0 0 15px #7b2cbf); }
+    }
+    
+    /* Corner brackets animation */
+    @keyframes cornerPulse {
+      0%, 100% { opacity: 0.5; stroke-width: 2; }
+      50% { opacity: 1; stroke-width: 3; }
+    }
+    
+    /* Particle float animation */
+    @keyframes particleFloat {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-200px) translateX(20px); opacity: 0; }
+    }
+    
+    @keyframes particleFloat2 {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-180px) translateX(-15px); opacity: 0; }
+    }
+    
+    /* Lock icon animation */
+    @keyframes lockBounce {
+      0%, 100% { transform: translateY(0); }
+      25% { transform: translateY(-3px); }
+      75% { transform: translateY(3px); }
+    }
+    
+    /* Shimmer effect */
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(200%) rotate(45deg); }
+    }
+    
+    /* Dot pulse */
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.7; }
+    }
+    
+    /* Hexagon rotate */
+    @keyframes hexRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Apply animations */
+    .bg-circle { animation: bgPulse 4s ease-in-out infinite; }
+    .scan-line { animation: scanLine 3s ease-in-out infinite; }
+    .face-outline { 
+      stroke-dasharray: 800; 
+      animation: drawFace 2s ease-out forwards, facePulse 3s ease-in-out infinite 2s;
+    }
+    .eye-left { 
+      animation: blink 4s ease-in-out infinite, eyeGlow 2s ease-in-out infinite;
+      transform-origin: 165px 160px;
+    }
+    .eye-right { 
+      animation: blink 4s ease-in-out infinite, eyeGlow 2s ease-in-out infinite 0.5s;
+      transform-origin: 235px 160px;
+    }
+    .corner-tl { animation: cornerPulse 2s ease-in-out infinite; }
+    .corner-tr { animation: cornerPulse 2s ease-in-out infinite 0.5s; }
+    .corner-bl { animation: cornerPulse 2s ease-in-out infinite 1s; }
+    .corner-br { animation: cornerPulse 2s ease-in-out infinite 1.5s; }
+    .particle-1 { animation: particleFloat 4s ease-in-out infinite; }
+    .particle-2 { animation: particleFloat2 4.5s ease-in-out infinite 0.5s; }
+    .particle-3 { animation: particleFloat 5s ease-in-out infinite 1s; }
+    .particle-4 { animation: particleFloat2 3.5s ease-in-out infinite 1.5s; }
+    .lock-icon { animation: lockBounce 2s ease-in-out infinite; }
+    .shimmer { animation: shimmer 3s ease-in-out infinite; }
+    .dot-1 { animation: dotPulse 1.5s ease-in-out infinite; }
+    .dot-2 { animation: dotPulse 1.5s ease-in-out infinite 0.3s; }
+    .dot-3 { animation: dotPulse 1.5s ease-in-out infinite 0.6s; }
+    .hex-ring { animation: hexRotate 20s linear infinite; transform-origin: 200px 180px; }
+    .hex-ring-reverse { animation: hexRotate 15s linear infinite reverse; transform-origin: 200px 180px; }
+  </style>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGradient)" rx="20" ry="20"/>
+  
+  <!-- Decorative hex rings -->
+  <g class="hex-ring" opacity="0.1">
+    <polygon points="200,100 250,130 250,180 200,210 150,180 150,130" fill="none" stroke="#00d4ff" stroke-width="1"/>
+    <polygon points="200,80 265,125 265,195 200,240 135,195 135,125" fill="none" stroke="#7b2cbf" stroke-width="1"/>
+  </g>
+  <g class="hex-ring-reverse" opacity="0.08">
+    <polygon points="200,150 230,165 230,195 200,210 170,195 170,165" fill="none" stroke="#00d4ff" stroke-width="1"/>
+  </g>
+  
+  <!-- Background circles -->
+  <circle class="bg-circle" cx="200" cy="180" r="130" fill="none" stroke="#7b2cbf" stroke-width="0.5" opacity="0.3"/>
+  <circle class="bg-circle" cx="200" cy="180" r="140" fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.2" style="animation-delay: 1s"/>
+  
+  <!-- Corner brackets -->
+  <g filter="url(#glow)">
+    <!-- Top Left -->
+    <path class="corner-tl" d="M80,80 L80,110 M80,80 L110,80" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+    <!-- Top Right -->
+    <path class="corner-tr" d="M320,80 L320,110 M320,80 L290,80" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+    <!-- Bottom Left -->
+    <path class="corner-bl" d="M80,280 L80,250 M80,280 L110,280" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+    <!-- Bottom Right -->
+    <path class="corner-br" d="M320,280 L320,250 M320,280 L290,280" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Face oval background -->
+  <ellipse cx="200" cy="180" rx="85" ry="105" fill="#0a0a15" opacity="0.5"/>
+  
+  <!-- Face fill pulse -->
+  <ellipse class="face-outline" cx="200" cy="180" rx="85" ry="105" fill="url(#faceGradient)" opacity="0.1" style="animation-delay: 2s"/>
+  
+  <!-- Face outline -->
+  <ellipse class="face-outline" cx="200" cy="180" rx="85" ry="105" fill="none" stroke="url(#faceGradient)" stroke-width="3" filter="url(#glow)"/>
+  
+  <!-- Scan line -->
+  <rect class="scan-line" x="100" y="0" width="200" height="8" fill="url(#scanGradient)" opacity="0.8" rx="4"/>
+  
+  <!-- Eyes -->
+  <g class="eye-left">
+    <ellipse cx="165" cy="160" rx="18" ry="12" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="165" cy="160" r="6" fill="#00d4ff"/>
+    <circle cx="167" cy="158" r="2" fill="#ffffff"/>
+  </g>
+  <g class="eye-right">
+    <ellipse cx="235" cy="160" rx="18" ry="12" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="235" cy="160" r="6" fill="#00d4ff"/>
+    <circle cx="237" cy="158" r="2" fill="#ffffff"/>
+  </g>
+  
+  <!-- Nose hint -->
+  <path d="M200,175 L195,200 L205,200" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Smile -->
+  <path d="M170,220 Q200,245 230,220" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Floating particles -->
+  <circle class="particle-1" cx="120" cy="280" r="3" fill="#00d4ff" filter="url(#strongGlow)"/>
+  <circle class="particle-2" cx="280" cy="290" r="2" fill="#7b2cbf" filter="url(#strongGlow)"/>
+  <circle class="particle-3" cx="100" cy="260" r="2" fill="#00d4ff" filter="url(#strongGlow)"/>
+  <circle class="particle-4" cx="300" cy="270" r="2.5" fill="#00d4ff" filter="url(#strongGlow)"/>
+  
+  <!-- Lock icon at bottom -->
+  <g class="lock-icon" filter="url(#glow)">
+    <rect x="185" y="290" width="30" height="24" rx="4" fill="#1a1a2e" stroke="#00d4ff" stroke-width="2"/>
+    <path d="M192,290 L192,282 A8,8 0 0,1 208,282 L208,290" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="200" cy="302" r="4" fill="#00d4ff"/>
+  </g>
+  
+  <!-- Loading dots -->
+  <g filter="url(#glow)">
+    <circle class="dot-1" cx="150" cy="340" r="4" fill="#00d4ff"/>
+    <circle class="dot-2" cx="200" cy="340" r="4" fill="#7b2cbf"/>
+    <circle class="dot-3" cx="250" cy="340" r="4" fill="#00d4ff"/>
+  </g>
+  
+  <!-- Shimmer effect overlay -->
+  <rect x="50" y="60" width="80" height="4" fill="white" opacity="0.3" class="shimmer" rx="2"/>
+  
+  <!-- Data points/nodes around face -->
+  <g opacity="0.6">
+    <circle cx="115" cy="130" r="3" fill="#00d4ff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="285" cy="130" r="3" fill="#00d4ff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="115" cy="230" r="3" fill="#7b2cbf">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="285" cy="230" r="3" fill="#7b2cbf">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+  
+  <!-- Connection lines to nodes (subtle) -->
+  <g stroke="#00d4ff" stroke-width="0.5" opacity="0.2">
+    <line x1="130" y1="145" x2="115" y2="130"/>
+    <line x1="270" y1="145" x2="285" y2="130"/>
+    <line x1="130" y1="215" x2="115" y2="230"/>
+    <line x1="270" y1="215" x2="285" y2="230"/>
+  </g>
+</svg>
